@@ -33,7 +33,7 @@ Only two routes are available in this project and the response format are:
 ## Posts
  ListPostView.
 Get list of posts from the database.
-hosted route -
+hosted route - https://consume-api-test.herokuapp.com/api/posts
 
 	curl http://localhost:5000/api/posts
 	-X   GET
@@ -64,7 +64,6 @@ sample response[200 OK]
 
  Submit Post.
 This endpoint allows you to create posts on your integration.
-hosted route -
 
 Headers - Content-Type	string    set to application/json
 Body    - title 		string    title of the post
