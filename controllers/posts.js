@@ -14,7 +14,7 @@ exports.getPosts = async (req, res) => {
 		res.status(500).json({ 
 			success: false,
 			message: 'Server error',
-			data: null
+			data: {}
 		})
 	}
 }
@@ -28,6 +28,34 @@ exports.addPosts = async (req, res) => {
 			success: true,
 			message: "Post successfully created",
 			data: post
+		})
+	}catch(err){
+		console.error(err)
+		res.status(500).json({ 
+			success: false,
+			message: 'Server error',
+		})
+	}
+}
+
+
+
+exports.deletePosts = async (req, res) => {
+	try{
+		const foundPost = await Post.findById(req.params.id)
+
+		if(!foundPost){
+			res.status(404).json({
+				success: false,
+				message: "No post found",
+				data: {}
+			})
+		}
+		await foundPost.remove()
+		res.status(200).json({
+			success: true,
+			message: "Post successfully deleted",
+			data: {}
 		})
 	}catch(err){
 		console.error(err)

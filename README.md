@@ -95,7 +95,7 @@ The response for requests failure are rather simple. For now, only the server-si
 	{
 		"success": false,
 		"message": 'Server error',
-		"data": null
+		"data": {}
 	}
 
 
