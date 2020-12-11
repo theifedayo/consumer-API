@@ -24,7 +24,7 @@ curl this shows the route to which request is to be made
 -d this represents data
 -X this represents the type of request
 
-Only three routes are available in this project and the response format are:
+Only two routes are available in this project with four types of request - GET, POST, PUT, DELETE and the response format are:
 
 
 	{
@@ -93,13 +93,32 @@ sample response[200 OK]
 				}
 	}
 
+ update Posts
+This endpoint allows you to edit and update posts on your integration.
+
+	curl http://localhost:5000/api/posts/<post_id>
+	-H   "Content-Type: application/json"
+	-d   '{ title: "update new title", post: "this explains your title"}'
+	-X   PUT
+
+
+sample response[200 OK]
+
+	{
+		"success": true,
+		"messafe": "Post successfully updated",
+		"data": {}
+	}
+
+
  Delete Posts
 This endpoint allows you to delete posts on your integration.
 
-	curl http://localhost:5000/api/posts
+
+	curl http://localhost:5000/api/posts/<post_id>
 	-H   "Content-Type: application/json"
 	-d   '{ title: "new title", post: "this explains your title"}'
-	-X   POST
+	-X   DELETE
 
 
 sample response[200 OK]
