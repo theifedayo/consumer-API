@@ -9,6 +9,10 @@ Make sure you have Node.js downloaded on your PC. To install packages in package
 
 	$ npm install 
 
+When all has been installed, run :
+
+	$ npm run dev
+to start the server running in development mode on port: 5000
 
 ## Requests-check
 Note - Request body data and response data are formatted as JSON.
@@ -20,7 +24,7 @@ curl this shows the route to which request is to be made
 -d this represents data
 -X this represents the type of request
 
-Only two routes are available in this project and the response format are:
+Only three routes are available in this project and the response format are:
 
 
 	{
@@ -87,6 +91,23 @@ sample response[200 OK]
 					"__v": 0,
 					"createdAt": "2020-12-09T12:47:48.188Z"
 				}
+	}
+
+ Delete Posts
+This endpoint allows you to delete posts on your integration.
+
+	curl http://localhost:5000/api/posts
+	-H   "Content-Type: application/json"
+	-d   '{ title: "new title", post: "this explains your title"}'
+	-X   POST
+
+
+sample response[200 OK]
+
+	{
+		"success": true,
+		"messafe": "Post successfully deleted",
+		"data": {}
 	}
 
 ## Errors
