@@ -5,7 +5,6 @@ const cors = require('cors')
 const connectDB = require('./config/db')
 
 
-
 //load environment variables
 dotenv.config({ path: './config/config.env'})
 
