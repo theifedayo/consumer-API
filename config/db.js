@@ -7,7 +7,6 @@ const connectDB = async ()=>{
 			console.log("Express app connected to DB successfully")
 		})
 	}catch(error){
-		console.error(error)
 		process.exit(1)
 	}
 }
