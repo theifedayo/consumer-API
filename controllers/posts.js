@@ -83,7 +83,6 @@ exports.deletePosts = async (req, res) => {
 			data: {}
 		})
 	}catch(err){
-		console.error(err)
 		res.status(500).json({ 
 			success: false,
 			message: 'Server error',
